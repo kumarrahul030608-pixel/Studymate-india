@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kumarrahul030608-pixel.github.io/Studymate-india/sitemap.xml
