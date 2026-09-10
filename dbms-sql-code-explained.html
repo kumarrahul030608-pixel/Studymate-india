@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DBMS SQL Code Explained | StudyMate India</title><style>*{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#f5f7fb;color:#172033;line-height:1.8}.hero{background:linear-gradient(135deg,#111827,#312e81);color:#fff;padding:45px 0}.wrap{max-width:1100px;margin:auto;padding:0 22px}.hero h1{font-size:40px}.back{color:#c4b5fd;font-weight:800}.box{background:#fff;margin:22px 0;padding:28px;border-radius:18px;border:1px solid #e5e7eb;box-shadow:0 8px 25px #0001}.code{background:#0f172a;color:#e5e7eb;padding:18px;border-radius:12px;white-space:pre-wrap;overflow:auto;font:14px/1.7 Consolas,monospace}.ex{background:#eef2ff;border-left:5px solid #4f46e5;padding:16px;border-radius:10px}.warn{background:#fff7ed;border-left:5px solid #f97316;padding:16px;border-radius:10px}.toc a{margin-right:14px;color:#4338ca;font-weight:700}.step{padding:12px 0;border-top:1px solid #e5e7eb}.qa{background:#f8fafc;padding:15px;border-radius:10px;margin:10px 0}table{width:100%;border-collapse:collapse}td,th{border:1px solid #ddd;padding:9px;text-align:left}</style></head><body><header class="hero"><div class="wrap"><a class="back" href="notes.html">← Notes Library</a><h1>🗄️ DBMS SQL — Code Explained Properly</h1><p>Long-form SQL notes with syntax, complete examples, line-by-line explanations, expected results and exam questions.</p></div></header><main class="wrap"><div class="box toc"><b>Topics:</b> <a href="#create">CREATE</a><a href="#insert">INSERT</a><a href="#select">SELECT</a><a href="#group">GROUP BY</a><a href="#join">JOINS</a><a href="#sub">Subquery</a><a href="#update">UPDATE/DELETE</a><a href="#tcl">TCL</a></div><section class="box" id="create"><h2>1. CREATE TABLE — Structure Banana</h2><div class="code">CREATE TABLE Student (
+    roll_no INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    major VARCHAR(30),
+    gpa DECIMAL(3,2)
+);</div><div class="step"><b>CREATE TABLE Student</b> — Student naam ki table banata hai.</div><div class="step"><b>roll_no INT PRIMARY KEY</b> — roll number integer hoga aur duplicate/null primary-key values allowed nahi hoti.</div><div class="step"><b>name VARCHAR(50) NOT NULL</b> — name text hoga, maximum 50 characters; value dena compulsory hai.</div><div class="step"><b>major VARCHAR(30)</b> — branch/major ke liye text column.</div><div class="step"><b>gpa DECIMAL(3,2)</b> — decimal value store karne ke liye.</div><div class="ex"><b>Exam point:</b> DDL commands database structure define karte hain. CREATE, ALTER aur DROP common DDL commands hain.</div></section><section class="box" id="insert"><h2>2. INSERT — Data Enter Karna</h2><div class="code">INSERT INTO Student (roll_no, name, major, gpa)
+VALUES (10, 'Rahul', 'CSE', 8.50);
+
+INSERT INTO Student VALUES
+(11, 'Aman', 'IT', 7.80);</div><p><b>First form</b> me columns explicitly likhe gaye hain, isliye safer hai. VALUES ke andar values same order me deni hoti hain.</p><div class="warn"><b>Common error:</b> text values ko quotes me likho: 'Rahul'. Numeric values normally quotes ke bina likhe jaate hain.</div></section><section class="box" id="select"><h2>3. SELECT — Data Retrieve Karna</h2><div class="code">SELECT name, gpa
+FROM Student
+WHERE gpa >= 8
+ORDER BY gpa DESC;</div><ol><li><b>SELECT name, gpa</b> — sirf required columns show karega.</li><li><b>FROM Student</b> — Student table se data lega.</li><li><b>WHERE gpa &gt;= 8</b> — sirf GPA 8 ya usse zyada wali rows.</li><li><b>ORDER BY gpa DESC</b> — highest GPA se lowest GPA tak sort.</li></ol><div class="ex"><b>Important:</b> WHERE rows ko filter karta hai; ORDER BY result ko sort karta hai. ASC ascending aur DESC descending hota hai.</div></section><section class="box"><h2>4. DISTINCT, BETWEEN, IN, LIKE</h2><div class="code">SELECT DISTINCT major FROM Student;
+SELECT * FROM Student WHERE gpa BETWEEN 7 AND 9;
+SELECT * FROM Student WHERE major IN ('CSE','IT');
+SELECT * FROM Student WHERE name LIKE 'R%';</div><p><b>DISTINCT</b> duplicate result values remove karta hai. <b>BETWEEN</b> range check karta hai. <b>IN</b> multiple possible values match karta hai. <b>LIKE 'R%'</b> R se start hone wale names find karta hai; % zero ya more characters represent karta hai.</p></section><section class="box" id="group"><h2>5. Aggregate Functions + GROUP BY + HAVING</h2><div class="code">SELECT major,
+       COUNT(*) AS total_students,
+       AVG(gpa) AS average_gpa,
+       MAX(gpa) AS highest_gpa,
+       MIN(gpa) AS lowest_gpa
+FROM Student
+GROUP BY major
+HAVING AVG(gpa) >= 7;</div><p><b>COUNT</b> rows count karta hai, <b>AVG</b> average, <b>MAX</b> maximum, <b>MIN</b> minimum aur <b>SUM</b> total nikalta hai.</p><div class="ex"><b>WHERE vs HAVING:</b> WHERE grouping se pehle individual rows filter karta hai. HAVING grouping ke baad groups filter karta hai. Isliye aggregate condition jaise AVG(gpa) ko HAVING me likhna natural hai.</div></section><section class="box" id="join"><h2>6. JOINS — Multiple Tables Ko Connect Karna</h2><div class="code">SELECT s.name, d.dept_name
+FROM Student s
+INNER JOIN Department d
+ON s.dept_id = d.dept_id;</div><p><b>s</b> aur <b>d</b> aliases hain. ON condition batati hai ki dono tables ka relation kaise match hoga.</p><table><tr><th>Join</th><th>Meaning</th></tr><tr><td>INNER JOIN</td><td>Sirf matching rows.</td></tr><tr><td>LEFT JOIN</td><td>Left table ki sab rows + matching right rows.</td></tr><tr><td>RIGHT JOIN</td><td>Right table ki sab rows + matching left rows.</td></tr><tr><td>FULL OUTER JOIN</td><td>Dono sides ki rows; DBMS support vary kar sakta hai.</td></tr></table><div class="code">SELECT s.name, d.dept_name
+FROM Student s
+LEFT JOIN Department d
+ON s.dept_id = d.dept_id;</div><p>LEFT JOIN ka advantage: jis student ka department match nahi karta, student row phir bhi result me rahegi; department columns NULL ho sakte hain.</p></section><section class="box" id="sub"><h2>7. SUBQUERY — Query Ke Andar Query</h2><div class="code">SELECT name, gpa
+FROM Student
+WHERE gpa > (
+    SELECT AVG(gpa)
+    FROM Student
+);</div><div class="step"><b>Step 1:</b> inner query <code>SELECT AVG(gpa)</code> average GPA calculate karti hai.</div><div class="step"><b>Step 2:</b> outer query har student ka GPA us average se compare karti hai.</div><div class="step"><b>Step 3:</b> sirf above-average students return hote hain.</div></section><section class="box" id="update"><h2>8. UPDATE and DELETE</h2><div class="code">UPDATE Student
+SET gpa = 9.00
+WHERE roll_no = 10;
+
+DELETE FROM Student
+WHERE roll_no = 11;</div><div class="warn"><b>Golden rule:</b> UPDATE/DELETE me WHERE carefully check karo. WHERE hata diya to table ki every row update/delete ho sakti hai.</div></section><section class="box"><h2>9. ALTER TABLE</h2><div class="code">ALTER TABLE Student ADD email VARCHAR(100);
+ALTER TABLE Student DROP COLUMN email;</div><p>ALTER existing table structure change karta hai. Exact syntax DBMS ke according thoda vary kar sakta hai.</p></section><section class="box" id="tcl"><h2>10. TCL — COMMIT, ROLLBACK, SAVEPOINT</h2><div class="code">START TRANSACTION;
+UPDATE Student SET gpa = 9.10 WHERE roll_no = 10;
+SAVEPOINT s1;
+UPDATE Student SET gpa = 8.90 WHERE roll_no = 11;
+ROLLBACK TO s1;
+COMMIT;</div><p><b>COMMIT</b> changes permanently confirm karta hai. <b>ROLLBACK</b> uncommitted changes undo karta hai. <b>SAVEPOINT</b> transaction ke andar intermediate point banata hai.</p><div class="ex"><b>Exam explanation:</b> Transaction me multiple related operations ko logical unit ke roop me execute kiya ja sakta hai. Failure ki situation me rollback consistency maintain karne me help karta hai.</div></section><section class="box"><h2>11. Common SQL Mistakes</h2><div class="qa">1. String ko quotes ke bina likhna.</div><div class="qa">2. UPDATE/DELETE me WHERE bhool jana.</div><div class="qa">3. GROUP BY me required non-aggregated columns ko properly handle na karna.</div><div class="qa">4. JOIN me wrong ON condition dena.</div><div class="qa">5. NULL ko = NULL se compare karna; NULL ke liye IS NULL / IS NOT NULL use hota hai.</div><div class="qa">6. SQL clause order confuse karna. Common order: SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY.</div></section><section class="box"><h2>🎯 SQL Exam Practice</h2><div class="qa">Q1. Create Student table with roll_no, name, major and GPA.</div><div class="qa">Q2. Insert 5 records and display all students.</div><div class="qa">Q3. Display students with GPA &gt; 8 and sort descending.</div><div class="qa">Q4. Find average GPA of each major.</div><div class="qa">Q5. Display majors whose average GPA is above 7.5.</div><div class="qa">Q6. Write INNER JOIN and LEFT JOIN between Student and Department.</div><div class="qa">Q7. Find students whose GPA is greater than overall average using a subquery.</div></section></main></body></html>
