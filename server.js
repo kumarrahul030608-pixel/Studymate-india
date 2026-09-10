@@ -24,7 +24,12 @@ app.get('/health', (_req, res) => res.json({ ok: true, service: 'StudyMate Compi
 
 app.post('/api/execute', async (req, res) => {
   try {
-    const { language_id, source_code, stdin = '' } = req.body || {};
+    const body = req.body || {};
+    // Accept both camelCase (frontend) and snake_case (API) field names.
+    const language_id = body.language_id ?? body.languageId;
+    const source_code = body.source_code ?? body.sourceCode;
+    const stdin = body.stdin ?? '';
+
     if (!Number.isInteger(language_id) || !allowedLanguages.has(language_id)) {
       return res.status(400).json({ error: 'Unsupported language.' });
     }
