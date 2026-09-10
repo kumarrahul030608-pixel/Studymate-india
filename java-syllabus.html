@@ -1,82 +1,111 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java Complete Notes & Programs | StudyMate India</title><style>body{font-family:Inter,system-ui,sans-serif;margin:0;background:#f5f7fb;color:#172033;line-height:1.7}.hero{background:linear-gradient(135deg,#111827,#312e81);color:#fff;padding:45px 0}.wrap{max-width:1050px;margin:auto;padding:0 22px}.module{background:#fff;margin:22px 0;padding:28px;border-radius:20px;box-shadow:0 8px 30px #0000000d}.topic{padding:15px 0;border-top:1px solid #e5e7eb}.topic h3{margin:0 0 7px}.code{background:#0f172a;color:#e2e8f0;padding:18px;border-radius:12px;white-space:pre-wrap;overflow:auto;font-family:Consolas,monospace;font-size:14px}.tip{background:#eef2ff;padding:15px;border-radius:12px}.back{color:#4f46e5;text-decoration:none;font-weight:700}.toc a{margin-right:15px;color:#4f46e5}@media(max-width:600px){.module{padding:20px}}</style></head><body><header class="hero"><div class="wrap"><h1>☕ Java Programming</h1><p>Detailed module-wise theory, examples, important questions and lab-ready programs.</p></div></header><main class="wrap"><p><a class="back" href="notes.html">← Notes Hub</a></p><div class="module toc"><b>Modules:</b> <a href="#m1">1 OOP</a><a href="#m2">2 Basics & Arrays</a><a href="#m3">3 Methods & Constructors</a><a href="#m4">4 Inheritance & Collections</a><a href="#m5">5 I/O & Applets</a></div><section class="module" id="m1"><h2>Module 1 — Procedure-Oriented & Object-Oriented Programming</h2><div class="topic"><h3>Procedure-Oriented Programming</h3><p>Procedure-oriented programming organizes a program around functions or procedures. Data is often passed between functions. It works well for smaller algorithmic tasks but large systems can become harder to maintain because data and operations are less tightly organized.</p></div><div class="topic"><h3>Object-Oriented Programming</h3><p>OOP organizes software around objects that combine state (data) and behavior (methods). Its major benefits are modularity, code reuse, maintainability, extensibility and easier modeling of real-world entities.</p></div><div class="topic"><h3>Four Pillars of OOP</h3><ul><li><b>Encapsulation:</b> Bundling data and methods and controlling access.</li><li><b>Abstraction:</b> Showing essential behavior while hiding implementation details.</li><li><b>Inheritance:</b> Creating a new class from an existing class for reuse.</li><li><b>Polymorphism:</b> One interface/name can represent different implementations.</li></ul></div><div class="topic"><h3>Java Program Structure</h3><p>A Java source file normally contains classes and methods. Execution begins from <code>public static void main(String[] args)</code>. The source is compiled into bytecode, which the JVM executes.</p></div><div class="topic"><h3>JDK, JRE and JVM</h3><p><b>JDK</b> contains tools needed to develop Java programs. <b>JRE</b> provides the runtime environment. <b>JVM</b> loads, verifies and executes Java bytecode and provides platform independence.</p></div><div class="code">class Student {
-    private String name;
-    Student(String name) { this.name = name; }
-    void display() { System.out.println("Name: " + name); }
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java Complete Textbook Notes | StudyMate India</title><style>*{box-sizing:border-box}body{font-family:system-ui,-apple-system,sans-serif;margin:0;background:#f5f7fb;color:#172033;line-height:1.7}.hero{background:linear-gradient(135deg,#111827,#312e81);color:#fff;padding:45px 0}.wrap{max-width:1100px;margin:auto;padding:0 22px}.hero h1{font-size:40px;margin:0}.hero p{color:#dbeafe}.back{color:#c4b5fd;text-decoration:none;font-weight:700}.module{background:#fff;margin:22px 0;padding:30px;border-radius:20px;border:1px solid #e5e7eb;box-shadow:0 8px 30px #0000000d}.topic{border-top:1px solid #e5e7eb;padding:19px 0}.topic h3{margin:0 0 8px;color:#312e81}.code{background:#0f172a;color:#e2e8f0;padding:18px;border-radius:12px;white-space:pre-wrap;overflow:auto;font:14px/1.65 Consolas,monospace}.note{background:#eef2ff;border-left:4px solid #4f46e5;padding:15px;border-radius:8px}.warn{background:#fff7ed;border-left:4px solid #f97316;padding:15px;border-radius:8px}.formula{background:#f8fafc;padding:14px;border-radius:9px;font-family:Consolas,monospace}.toc{background:#fff;padding:18px;border-radius:15px;border:1px solid #e5e7eb}.toc a{display:inline-block;margin:5px 10px;color:#4338ca;text-decoration:none;font-weight:700}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{background:#f8fafc;padding:16px;border-radius:12px}.qa{padding:14px;border:1px solid #e5e7eb;border-radius:10px;margin:9px 0}@media(max-width:700px){.hero h1{font-size:30px}.grid{grid-template-columns:1fr}.module{padding:21px}}</style></head><body><header class="hero"><div class="wrap"><a class="back" href="notes.html">← Notes Library</a><h1>☕ Java Programming — Complete Textbook Notes</h1><p>Detailed module-wise concepts, syntax, examples, programs, OOP theory and practical-exam preparation.</p></div></header><main class="wrap"><nav class="toc"><b>Modules:</b><a href="#m1">Module 1</a><a href="#m2">Module 2</a><a href="#m3">Module 3</a><a href="#m4">Module 4</a><a href="#m5">Module 5</a><a href="#lab">Lab Programs</a></nav>
+<section class="module" id="m1"><h2>Module 1 — Procedure-Oriented Programming & Object-Oriented Programming</h2><div class="topic"><h3>1. Programming Paradigms</h3><p>A programming paradigm is a style of organizing and solving problems using a programming language. In <b>procedure-oriented programming</b>, the program is divided into procedures/functions and the main focus is on the sequence of operations. In <b>object-oriented programming</b>, the program is organized around objects that contain state and behavior.</p><div class="note"><b>Why OOP?</b> Large programs need modularity, reuse, controlled access to data and easy maintenance. OOP addresses these requirements through classes, objects, encapsulation, abstraction, inheritance and polymorphism.</div></div><div class="topic"><h3>2. Class and Object</h3><p>A <b>class</b> is a blueprint that defines fields and methods. An <b>object</b> is a runtime instance of a class. Each object has state, behavior and identity. Objects are created using <code>new</code>.</p><div class="code">class Student {
+    String name;
+    int marks;
+
+    void display() {
+        System.out.println(name + " " + marks);
+    }
+}
+
+class Main {
     public static void main(String[] args) {
-        Student s = new Student("Rahul");
+        Student s = new Student();
+        s.name = "Rahul";
+        s.marks = 85;
         s.display();
     }
-}</div></section><section class="module" id="m2"><h2>Module 2 — Data Types, Control Statements & Arrays</h2><div class="topic"><h3>Data Types</h3><p>Java has eight primitive types: byte, short, int, long, float, double, char and boolean. Reference types include classes, interfaces, arrays and enums. Variables must have a declared type.</p></div><div class="topic"><h3>Control Statements</h3><p><b>Selection:</b> if, if-else, nested if and switch. <b>Iteration:</b> for, while and do-while. <b>Jump:</b> break, continue and return.</p></div><div class="topic"><h3>Arrays</h3><p>An array stores a fixed number of values of the same type. Indexing starts at 0. A two-dimensional array can represent a matrix. Use <code>array.length</code> to get its size.</p></div><div class="code">import java.util.Scanner;
-public class ArrayProgram {
+}</div></div><div class="topic"><h3>3. Four Pillars of OOP</h3><div class="grid"><div class="card"><b>Encapsulation</b><br>Combining data and methods in a class and restricting direct access using private/protected/public access control.</div><div class="card"><b>Abstraction</b><br>Showing essential operations while hiding implementation details, commonly through abstract classes and interfaces.</div><div class="card"><b>Inheritance</b><br>Deriving a new class from an existing class to reuse and specialize behavior.</div><div class="card"><b>Polymorphism</b><br>The same operation can behave differently depending on the object or method signature. Overloading is compile-time; overriding enables runtime polymorphism.</div></div></div><div class="topic"><h3>4. Java Features</h3><p>Java is class-based, object-oriented, strongly typed and designed for portability through bytecode. Commonly described features include platform independence, automatic memory management, exception handling, multithreading, security mechanisms and a rich standard library.</p></div><div class="topic"><h3>5. JDK, JRE and JVM</h3><p><b>JDK</b> is the development kit containing tools such as the compiler. <b>JRE</b> is the runtime environment and libraries needed to run Java applications. <b>JVM</b> loads, verifies and executes bytecode. The basic flow is <b>source (.java) → compiler → bytecode (.class) → JVM → machine execution</b>.</p></div><div class="topic"><h3>6. Java Program Structure and Tokens</h3><p>A Java program can contain package declarations, imports, classes, fields, constructors and methods. Tokens include identifiers, keywords, literals, operators and separators. Java identifiers are case-sensitive.</p><div class="code">public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[] a = new int[5];
-        int sum = 0;
-        for(int i=0;i<a.length;i++) {
-            a[i] = sc.nextInt();
-            sum += a[i];
-        }
-        System.out.println("Sum = " + sum);
-        System.out.println("Average = " + (sum / 5.0));
+        System.out.println("Hello World");
     }
-}</div><div class="topic"><h3>Important Programs</h3><ul><li>Largest/smallest element in an array</li><li>Linear search</li><li>Array sorting</li><li>Matrix addition and multiplication</li><li>Transpose of matrix</li><li>Prime number and factorial</li><li>Palindrome number/string</li></ul></div></section><section class="module" id="m3"><h2>Module 3 — Functions, Overloading, References & Constructors</h2><div class="topic"><h3>Methods</h3><p>A method is a named block of code that performs a task. A method can accept parameters and return a value. Static methods belong to the class, while instance methods operate on objects.</p></div><div class="topic"><h3>Method Overloading</h3><p>Overloading means multiple methods have the same name but different parameter lists. The compiler chooses the applicable method at compile time.</p></div><div class="code">class Calculator {
-    int add(int a, int b) { return a + b; }
-    int add(int a, int b, int c) { return a + b + c; }
-    double add(double a, double b) { return a + b; }
+}</div></div></section>
+<section class="module" id="m2"><h2>Module 2 — Data Types, Variables, Operators, Control Statements & Arrays</h2><div class="topic"><h3>1. Data Types</h3><p>Java has eight primitive types: <b>byte, short, int, long, float, double, char, boolean</b>. Reference types include classes, arrays, interfaces, enums and other object references. Primitive variables store values directly; reference variables refer to objects.</p><div class="note"><b>Important:</b> <code>int</code> is commonly used for whole-number calculations. Use <code>long</code> for larger integer ranges and <code>double</code> for common floating-point calculations.</div></div><div class="topic"><h3>2. Variables and Type Casting</h3><p>Variables may be local, instance or static. Widening conversion can happen automatically when moving to a compatible wider type. Narrowing conversion requires an explicit cast and can lose information.</p><div class="code">int a = 10;
+double x = a;       // widening
+int b = (int) 12.8;  // narrowing: b becomes 12</div></div><div class="topic"><h3>3. Operators</h3><p>Arithmetic: +, -, *, /, %. Relational: &lt;, &gt;, &lt;=, &gt;=, ==, !=. Logical: &amp;&amp;, ||, !. Assignment: =, +=, -=, etc. Unary: ++, --. Conditional: ?: . Bitwise operators work at bit level.</p></div><div class="topic"><h3>4. Decision Statements</h3><p><code>if</code> executes a block conditionally; <code>if-else</code> chooses between alternatives; nested conditions handle multiple levels. <code>switch</code> is useful when one expression is compared against multiple cases.</p><div class="code">int marks = 78;
+if (marks >= 90) System.out.println("A");
+else if (marks >= 60) System.out.println("B");
+else System.out.println("C");</div></div><div class="topic"><h3>5. Loops</h3><p><b>for</b> is convenient when the iteration structure is known, <b>while</b> checks before each iteration, and <b>do-while</b> executes the body at least once. <code>break</code> exits a loop; <code>continue</code> skips to the next iteration.</p></div><div class="topic"><h3>6. Arrays</h3><p>An array is a fixed-size indexed collection of values of the same type. The first index is 0. A one-dimensional array represents a sequence; a two-dimensional array can represent a matrix.</p><div class="code">int[] a = {10, 20, 30, 40, 50};
+for (int i = 0; i &lt; a.length; i++) {
+    System.out.println(a[i]);
 }
-</div><div class="topic"><h3>Constructors</h3><p>A constructor initializes an object and has the same name as its class. It has no return type. Constructors can be overloaded. If no constructor is declared, Java may provide a default constructor.</p></div><div class="topic"><h3>Reference Variables</h3><p>A reference variable stores a reference to an object. The <code>this</code> keyword refers to the current object; <code>super</code> refers to the superclass portion of an object.</p></div><div class="topic"><h3>Garbage Collection</h3><p>Java automatically reclaims memory occupied by objects that are no longer reachable. Programmers do not explicitly free ordinary objects as in C/C++.</p></div></section><section class="module" id="m4"><h2>Module 4 — Inheritance & Collections</h2><div class="topic"><h3>Inheritance</h3><p>Inheritance allows a subclass to reuse accessible members of a superclass. Common forms are single, multilevel and hierarchical inheritance. Java does not support multiple inheritance of classes.</p></div><div class="code">class Animal {
+
+int[][] matrix = {{1,2},{3,4}};
+System.out.println(matrix[1][0]); // 3</div></div><div class="topic"><h3>7. Common Array Problems</h3><p>Practice sum/average, maximum/minimum, reverse, linear search, sorting, duplicate detection, frequency counting, matrix addition, transpose and multiplication. When explaining a program, state the algorithm, input, loop logic and complexity.</p></div></section>
+<section class="module" id="m3"><h2>Module 3 — Methods, References, Constructors & Memory</h2><div class="topic"><h3>1. Methods</h3><p>A method is a named block that performs a specific operation. Its declaration can contain access modifier, static/instance modifier, return type, method name and parameter list. <code>void</code> means it returns no value.</p><div class="code">static int add(int a, int b) {
+    return a + b;
+}
+
+public static void main(String[] args) {
+    System.out.println(add(10, 20));
+}</div></div><div class="topic"><h3>2. Method Overloading</h3><p>Method overloading allows the same method name with different parameter lists. Changing only the return type does not create a valid overload. The compiler resolves an overload at compile time.</p></div><div class="topic"><h3>3. Constructors</h3><p>A constructor initializes a newly created object. It has the class name and no return type. Constructors can be no-argument or parameterized and can be overloaded. <code>this()</code> can call another constructor in the same class.</p><div class="code">class Student {
+    String name;
+    int age;
+
+    Student() {
+        this("Unknown", 0);
+    }
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}</div></div><div class="topic"><h3>4. this and super</h3><p><code>this</code> refers to the current object and can resolve field/parameter name conflicts. <code>super</code> refers to the superclass and can access superclass members or call a superclass constructor.</p></div><div class="topic"><h3>5. Passing Values and References</h3><p>Java is pass-by-value. For an object parameter, the value passed is the reference value; the method can modify the referenced object's state, but reassigning the parameter does not change the caller's reference.</p></div><div class="topic"><h3>6. Garbage Collection</h3><p>Java automatically manages memory. Objects that are no longer reachable become eligible for garbage collection. The exact time of garbage collection is controlled by the runtime, not by the programmer.</p></div><div class="topic"><h3>7. Strings</h3><p><code>String</code> objects are immutable. Common operations include <code>length()</code>, <code>charAt()</code>, <code>substring()</code>, <code>equals()</code>, <code>compareTo()</code> and <code>toUpperCase()</code>. Use <code>StringBuilder</code> for efficient repeated modifications.</p></div></section>
+<section class="module" id="m4"><h2>Module 4 — Inheritance, Interfaces, Polymorphism & Collections</h2><div class="topic"><h3>1. Inheritance</h3><p>Inheritance creates an <b>is-a</b> relationship. Java supports single, multilevel and hierarchical inheritance of classes. Multiple inheritance of classes is not supported, but multiple interfaces can be implemented.</p><div class="code">class Animal {
     void sound() { System.out.println("Animal sound"); }
 }
 class Dog extends Animal {
     @Override
     void sound() { System.out.println("Bark"); }
+}</div></div><div class="topic"><h3>2. Method Overriding</h3><p>Overriding occurs when a subclass provides a compatible implementation of an inherited instance method. The method signature must match according to Java's overriding rules. <code>@Override</code> helps the compiler catch mistakes.</p></div><div class="topic"><h3>3. Runtime Polymorphism</h3><div class="code">Animal a = new Dog();
+a.sound(); // Bark</div><p>The reference type is Animal, but the object is Dog. The overridden instance method is selected according to the actual object at runtime.</p></div><div class="topic"><h3>4. Abstract Classes</h3><p>An abstract class cannot be instantiated directly. It may contain abstract methods and concrete methods. A subclass generally must implement inherited abstract methods unless the subclass is also abstract.</p></div><div class="topic"><h3>5. Interfaces</h3><p>An interface defines a contract. A class uses <code>implements</code> to fulfill that contract and may implement multiple interfaces. Modern Java interfaces may also contain default and static methods.</p><div class="code">interface Printable {
+    void print();
 }
-public class Demo {
-    public static void main(String[] args) {
-        Animal a = new Dog();
-        a.sound();
+class Report implements Printable {
+    public void print() {
+        System.out.println("Report");
     }
-}</div><div class="topic"><h3>Overriding & Runtime Polymorphism</h3><p>When a subclass provides a method with the same signature as the superclass, it overrides that method. With a superclass reference referring to a subclass object, the overridden method is selected at runtime.</p></div><div class="topic"><h3>Abstract Classes & Interfaces</h3><p>An abstract class can contain abstract and concrete methods. An interface defines a contract that implementing classes fulfill. A class can implement multiple interfaces.</p></div><div class="topic"><h3>Collections Framework</h3><p><b>ArrayList</b> provides a resizable list; <b>LinkedList</b> is useful for linked-list operations; <b>HashSet</b> stores unique elements; <b>TreeSet</b> maintains sorted unique elements; <b>HashMap</b> stores key-value pairs.</p></div><div class="code">import java.util.*;
-public class CollectionDemo {
+}</div></div><div class="topic"><h3>6. Exception Handling</h3><p>An exception is an abnormal condition that interrupts normal execution. Use <code>try</code>, <code>catch</code>, <code>finally</code>, <code>throw</code> and <code>throws</code> to handle or declare exceptional conditions. Checked exceptions are checked by the compiler; unchecked exceptions include runtime exceptions.</p><div class="code">try {
+    int result = 10 / 0;
+    System.out.println(result);
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+} finally {
+    System.out.println("Done");
+}</div></div><div class="topic"><h3>7. Collections Framework</h3><p><b>List</b> maintains an ordered sequence and can contain duplicates. <b>Set</b> represents unique elements. <b>Map</b> stores key-value associations. Common implementations are ArrayList, LinkedList, HashSet, TreeSet and HashMap.</p><div class="code">import java.util.*;
+ArrayList&lt;String&gt; names = new ArrayList&lt;&gt;();
+names.add("Rahul");
+names.add("Aman");
+for (String name : names) System.out.println(name);
+
+HashMap&lt;Integer,String&gt; m = new HashMap&lt;&gt;();
+m.put(10, "Rahul");
+System.out.println(m.get(10));</div></div></section>
+<section class="module" id="m5"><h2>Module 5 — Input/Output, Files, Threads & Legacy Applets</h2><div class="topic"><h3>1. Console Input</h3><p><code>Scanner</code> can read primitive values and strings from standard input. In online compilers, standard input is normally supplied through the compiler's stdin/input box.</p><div class="code">import java.util.Scanner;
+class Main {
     public static void main(String[] args) {
-        ArrayList<String> names = new ArrayList<>();
-        names.add("Rahul");
-        names.add("Aman");
-        names.add("Neha");
-        for(String name : names) System.out.println(name);
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println("Sum = " + (a + b));
     }
-}</div></section><section class="module" id="m5"><h2>Module 5 — Applets, Graphics & Input/Output</h2><div class="topic"><h3>Applet Concepts</h3><p>Applets are legacy Java programs designed to run inside a browser/applet viewer. Typical lifecycle methods taught academically are <code>init()</code>, <code>start()</code>, <code>paint()</code>, <code>stop()</code> and <code>destroy()</code>. Modern browsers and current Java releases no longer support browser applets, so this part is mainly historical syllabus material.</p></div><div class="topic"><h3>Java I/O</h3><p>Byte streams handle binary data, while character streams handle text. <code>FileInputStream</code>/<code>FileOutputStream</code> work with bytes; <code>FileReader</code>/<code>FileWriter</code> work with characters; buffered classes improve efficiency.</p></div><div class="code">import java.io.*;
-public class FileRead {
+}</div><div class="note"><b>Online compiler tip:</b> If <code>nextInt()</code> throws <code>NoSuchElementException</code>, the program was expecting input but stdin was empty or did not contain enough values.</div></div><div class="topic"><h3>2. Byte and Character Streams</h3><p>Byte streams such as FileInputStream/FileOutputStream are suited to binary data. Character streams such as FileReader/FileWriter are designed for text. Buffered streams reduce frequent direct I/O operations.</p><div class="code">import java.io.*;
+class FileRead {
     public static void main(String[] args) throws IOException {
-        try(BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
             String line;
-            while((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null)
                 System.out.println(line);
-            }
         }
     }
-}</div><div class="topic"><h3>Serialization</h3><p>Serialization converts an object's state into a byte stream so it can be stored or transferred. A serializable class implements <code>Serializable</code>. Deserialization reconstructs the object state.</p></div></section><section class="module"><h2>🔥 Exam & Lab Program Bank</h2><div class="code">1. Factorial
-2. Fibonacci series
-3. Prime number
-4. Palindrome number
-5. Reverse a number
-6. Armstrong number
-7. Largest of three numbers
-8. Sum/average of array
-9. Linear search
-10. Sort an array
-11. Matrix addition
-12. Matrix transpose
-13. String palindrome
-14. Count vowels/consonants
-15. Method overloading
-16. Constructor overloading
-17. Single inheritance
-18. Method overriding
-19. Abstract class example
-20. Interface example
-21. ArrayList operations
-22. Exception handling
-23. File reading/writing
-24. Serialization
-25. Multithreading basics</div><div class="tip"><b>Study tip:</b> For every program, learn the logic first, then write the syntax. In practical exams, be ready to explain input, variables, loop/condition, output and time complexity.</div></section></main></body></html>
+}</div></div><div class="topic"><h3>3. Serialization</h3><p>Serialization converts an object's state to a byte stream for storage or transfer. A class can implement <code>Serializable</code>. Deserialization reconstructs the stored object state. Serializable classes should be designed carefully when data compatibility and security matter.</p></div><div class="topic"><h3>4. Multithreading</h3><p>A thread is an independent path of execution within a process. Java supports threads through the Thread class and Runnable/Callable abstractions. Basic lifecycle ideas include creation, runnable/running execution and termination. Synchronization is used to protect shared mutable state.</p><div class="code">class Task extends Thread {
+    public void run() {
+        System.out.println("Task running");
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        new Task().start();
+    }
+}</div></div><div class="topic"><h3>5. Applets</h3><p>Java applets are legacy browser-oriented technology. Academic syllabi may cover <code>init()</code>, <code>start()</code>, <code>paint()</code>, <code>stop()</code> and <code>destroy()</code>. Modern browsers and current Java environments do not support browser applets, so this topic is mainly historical.</p></div></section>
+<section class="module" id="lab"><h2>🔥 Complete Lab & Exam Program Bank</h2><div class="grid"><div class="card"><b>Basic Programs</b><ol><li>Hello World</li><li>Add two numbers</li><li>Largest of three</li><li>Even/Odd</li><li>Positive/Negative</li><li>Factorial</li><li>Fibonacci</li><li>Prime</li><li>Palindrome</li><li>Armstrong</li></ol></div><div class="card"><b>Array & Matrix</b><ol><li>Sum/average</li><li>Maximum/minimum</li><li>Linear search</li><li>Binary search</li><li>Sort array</li><li>Reverse array</li><li>Matrix addition</li><li>Transpose</li><li>Matrix multiplication</li></ol></div><div class="card"><b>OOP Programs</b><ol><li>Class and object</li><li>Constructor</li><li>Constructor overloading</li><li>Method overloading</li><li>Inheritance</li><li>Overriding</li><li>Abstract class</li><li>Interface</li><li>Runtime polymorphism</li></ol></div><div class="card"><b>Advanced Programs</b><ol><li>Exception handling</li><li>ArrayList</li><li>HashMap</li><li>String operations</li><li>File read/write</li><li>Serialization</li><li>Multithreading</li></ol></div></div><div class="warn"><b>Practical exam checklist:</b> Know the program's algorithm, identify input/output, explain every major line, handle edge cases, and be ready to modify the program for a slightly different question.</div></section></main></body></html>
