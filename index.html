@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudyMate India — Student Toolkit</title>
+  <meta name="description" content="Free student tools for CGPA, attendance, statistics, budget planning, study planning and programming practice." />
+  <style>
+    :root{--bg:#f6f8fc;--card:#fff;--text:#152033;--muted:#64748b;--primary:#4f46e5;--primary2:#7c3aed;--line:#e5e7eb;--shadow:0 16px 40px rgba(15,23,42,.08)}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;font-size:20px}.brand span{color:var(--primary)}
+    .navlinks{display:flex;gap:20px;color:#475569;font-size:14px}.navlinks a:hover{color:var(--primary)}
+    .hero{padding:72px 0 40px;background:linear-gradient(135deg,#eef2ff 0%,#faf5ff 55%,#f8fafc 100%)}
+    .hero h1{font-size:clamp(38px,6vw,66px);line-height:1.05;margin:0 0 18px;max-width:800px}.hero h1 span{color:var(--primary)}
+    .hero p{font-size:18px;color:var(--muted);max-width:720px;margin:0 0 28px}.cta{display:inline-flex;gap:10px;align-items:center;background:var(--primary);color:#fff;padding:13px 18px;border-radius:12px;font-weight:700;box-shadow:0 10px 25px rgba(79,70,229,.25)}
+    section{padding:42px 0}.sectionhead{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:20px}.sectionhead h2{margin:0;font-size:28px}.sectionhead p{margin:0;color:var(--muted);font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.card h3{margin:8px 0 6px}.card p{margin:0;color:var(--muted);font-size:14px}.icon{font-size:28px}.card button{margin-top:16px;width:100%;border:0;background:#eef2ff;color:#3730a3;padding:10px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+    .tool{max-width:720px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:var(--shadow)}.tool h3{margin-top:0}.row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}.field input{width:100%;padding:11px 12px;border:1px solid #dbe1ea;border-radius:10px;font:inherit}.action{margin-top:14px;border:0;background:var(--primary);color:#fff;padding:11px 16px;border-radius:10px;font-weight:700;cursor:pointer}.result{margin-top:16px;padding:14px;border-radius:12px;background:#f8fafc;border:1px solid var(--line);font-weight:700;min-height:50px}
+    .note{font-size:13px;color:var(--muted);margin-top:8px}.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.tab{border:1px solid var(--line);background:#fff;padding:8px 12px;border-radius:999px;cursor:pointer;font-weight:600}.tab.active{background:#111827;color:#fff}
+    footer{padding:35px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}} @media(max-width:600px){.navlinks{display:none}.grid,.row{grid-template-columns:1fr}.hero{padding-top:48px}.sectionhead{display:block}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><nav><div class="brand">Study<span>Mate</span> India</div><div class="navlinks"><a href="#tools">Tools</a><a href="#programming">Programming</a><a href="#about">About</a></div></nav></div></header>
+  <main>
+    <section class="hero"><div class="wrap"><h1>Smart tools for <span>students</span>.</h1><p>CGPA, attendance, statistics and student budgeting — simple tools designed for everyday college life.</p><a class="cta" href="#tools">Explore tools ↓</a></div></section>
+    <section id="tools"><div class="wrap"><div class="sectionhead"><div><h2>Student Tools</h2><p>Fast, free and mobile-friendly.</p></div></div>
+      <div class="grid">
+        <div class="card"><div class="icon">🎓</div><h3>CGPA Calculator</h3><p>Enter your subject grades and credits to estimate SGPA / CGPA.</p><button onclick="showTool('cgpa')">Open tool</button></div>
+        <div class="card"><div class="icon">📊</div><h3>Statistics</h3><p>Calculate mean, median and standard deviation for a data set.</p><button onclick="showTool('stats')">Open tool</button></div>
+        <div class="card"><div class="icon">✅</div><h3>Attendance</h3><p>See your current percentage and how many classes you can miss.</p><button onclick="showTool('attendance')">Open tool</button></div>
+        <div class="card"><div class="icon">💸</div><h3>Budget Planner</h3><p>Plan monthly spending across food, travel, rent and other needs.</p><button onclick="showTool('budget')">Open tool</button></div>
+      </div>
+    </div></section>
+
+    <section id="calculator"><div class="wrap"><div class="tool" id="toolbox"><h3>Choose a tool above</h3><p class="note">Your calculations run in the browser. Nothing is sent to a server.</p></div></div></section>
+
+    <section id="programming"><div class="wrap"><div class="sectionhead"><div><h2>Programming Practice</h2><p>Quick starter snippets for college labs.</p></div></div>
+      <div class="tabs"><button class="tab active" onclick="setLang('java',this)">Java</button><button class="tab" onclick="setLang('sql',this)">SQL</button></div>
+      <div class="tool"><pre id="code" style="white-space:pre-wrap;margin:0;font-size:14px"></pre></div>
+    </div></section>
+
+    <section id="about"><div class="wrap"><div class="tool"><h3>About StudyMate India</h3><p>A student-first toolkit project. More notes, exam resources, resume helpers and AI-powered study features can be added next.</p><p class="note">For educational use. Always verify academic results and official college rules.</p></div></div></section>
+  </main>
+  <footer><div class="wrap">© 2026 StudyMate India · Built for students</div></footer>
+
+  <script>
+    const box=document.getElementById('toolbox');
+    function showTool(type){
+      document.getElementById('calculator').scrollIntoView({behavior:'smooth'});
+      const common=(title,html)=>{box.innerHTML='<h3>'+title+'</h3>'+html};
+      if(type==='cgpa') common('🎓 CGPA Calculator',`<div class="row"><div class="field"><label>Semester 1 CGPA</label><input id="c1" type="number" min="0" max="10" step="0.01"></div><div class="field"><label>Semester 2 CGPA</label><input id="c2" type="number" min="0" max="10" step="0.01"></div></div><button class="action" onclick="calc('cgpa')">Calculate</button><div class="result" id="res">Enter values and calculate.</div><div class="note">For equal-credit semesters, the simple average is used.</div>`);
+      if(type==='stats') common('📊 Statistics Calculator',`<div class="field"><label>Numbers (comma separated)</label><input id="data" placeholder="10, 12, 15, 18, 20"></div><button class="action" onclick="calc('stats')">Calculate</button><div class="result" id="res">Enter a data set.</div>`);
+      if(type==='attendance') common('✅ Attendance Calculator',`<div class="row"><div class="field"><label>Classes attended</label><input id="att" type="number" min="0"></div><div class="field"><label>Total classes</label><input id="tot" type="number" min="1"></div></div><button class="action" onclick="calc('attendance')">Calculate</button><div class="result" id="res">Enter class counts.</div>`);
+      if(type==='budget') common('💸 Budget Planner',`<div class="row"><div class="field"><label>Monthly income / allowance (₹)</label><input id="income" type="number" min="0"></div><div class="field"><label>Fixed expenses (₹)</label><input id="fixed" type="number" min="0"></div></div><div class="row" style="margin-top:12px"><div class="field"><label>Food & travel (₹)</label><input id="daily" type="number" min="0"></div><div class="field"><label>Other (₹)</label><input id="other" type="number" min="0"></div></div><button class="action" onclick="calc('budget')">Calculate</button><div class="result" id="res">Enter your monthly figures.</div>`);
+    }
+    function calc(type){
+      const out=document.getElementById('res');
+      if(type==='cgpa'){const a=+c1.value,b=+c2.value;if(isNaN(a)||isNaN(b)) return out.textContent='Please enter both CGPAs.';out.textContent='Average CGPA = '+((a+b)/2).toFixed(2)}
+      if(type==='stats'){const arr=data.value.split(',').map(x=>+x.trim()).filter(x=>Number.isFinite(x));if(!arr.length)return out.textContent='Please enter valid numbers.';arr.sort((a,b)=>a-b);const mean=arr.reduce((s,x)=>s+x,0)/arr.length;const med=arr.length%2?arr[(arr.length-1)/2]:(arr[arr.length/2-1]+arr[arr.length/2])/2;const sd=Math.sqrt(arr.reduce((s,x)=>s+(x-mean)**2,0)/arr.length);out.textContent=`Mean = ${mean.toFixed(2)} | Median = ${med.toFixed(2)} | SD = ${sd.toFixed(2)}`}
+      if(type==='attendance'){const a=+att.value,t=+tot.value;if(t<=0||a<0||a>t)return out.textContent='Please enter valid class counts.';out.textContent=`Attendance = ${(a/t*100).toFixed(2)}%`}
+      if(type==='budget'){const vals=['income','fixed','daily','other'].map(id=>+document.getElementById(id).value||0);const [i,f,d,o]=vals;out.textContent=`Remaining = ₹${Math.max(0,i-f-d-o).toFixed(0)} | Total planned = ₹${(f+d+o).toFixed(0)}`}
+    }
+    const snippets={java:`import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        System.out.print("Enter number: ");\n        int n = sc.nextInt();\n        System.out.println("You entered: " + n);\n    }\n}`,sql:`-- Update GPA\nUPDATE student\nSET gpa = 8.50\nWHERE roll_no = 10;\n\n-- Sort by major ASC, GPA DESC\nSELECT * FROM student\nORDER BY major ASC, gpa DESC;`};
+    function setLang(lang,el){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));el.classList.add('active');document.getElementById('code').textContent=snippets[lang]}
+    setLang('java',document.querySelector('.tab'));
+  </script>
+</body>
+</html>
