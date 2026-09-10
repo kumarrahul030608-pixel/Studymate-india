@@ -1,10 +1,16 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java Textbook Notes | StudyMate India</title><style>body{margin:0;font-family:system-ui;background:#f5f7fb;color:#172033;line-height:1.8}.hero{background:linear-gradient(135deg,#111827,#312e81);color:#fff;padding:45px 20px}.wrap{max-width:1050px;margin:auto;padding:0 22px}.hero h1{font-size:42px;margin:10px 0}.hero p{color:#dbeafe}.back{color:#c4b5fd;font-weight:700}.chapter{background:#fff;margin:24px 0;padding:30px;border-radius:18px;border:1px solid #e5e7eb;box-shadow:0 8px 25px #0000000c}.chapter h2{color:#312e81}.topic{border-top:1px solid #e5e7eb;padding:20px 0}.code{background:#0f172a;color:#e5e7eb;padding:18px;border-radius:12px;white-space:pre-wrap;font-family:Consolas,monospace;overflow:auto}.note{background:#eef2ff;border-left:5px solid #4f46e5;padding:16px;border-radius:9px}.example{background:#f8fafc;padding:16px;border-radius:10px}.qa{background:#fff7ed;padding:16px;border-radius:10px;margin:10px 0}.toc{background:#fff;padding:18px;border-radius:14px;margin:22px 0}.toc a{margin:6px 10px;color:#4338ca;font-weight:700;text-decoration:none}@media(max-width:650px){.hero h1{font-size:31px}.chapter{padding:20px}}</style></head><body><header class="hero"><div class="wrap"><a class="back" href="notes.html">← Notes Library</a><h1>☕ Java — Long-Form Textbook Notes</h1><p>Chapter-wise theory, syntax, examples, programs, OOP, exceptions, collections and practical preparation.</p></div></header><main class="wrap"><nav class="toc"><b>Chapters:</b><a href="#1">Java Basics</a><a href="#2">Control & Arrays</a><a href="#3">Methods & Classes</a><a href="#4">OOP</a><a href="#5">Exceptions & Collections</a><a href="#6">I/O & Threads</a><a href="#lab">Lab Bank</a></nav><section class="chapter" id="1"><h2>Chapter 1 — Java Fundamentals</h2><div class="topic"><h3>1.1 Programming Paradigms</h3><p>A programming paradigm is a way of organizing a solution. Procedure-oriented programming focuses on functions and sequence of operations. Object-oriented programming organizes software around objects containing state and behavior. Java is primarily class-based and object-oriented.</p></div><div class="topic"><h3>1.2 Java Features</h3><p>Java is strongly typed, class-based and portable through bytecode. Commonly discussed features include platform independence, automatic memory management, exception handling, multithreading, security features and a large standard library.</p></div><div class="topic"><h3>1.3 JDK, JRE and JVM</h3><p><b>JDK</b> provides development tools such as the compiler. <b>JRE</b> provides the runtime environment and libraries. <b>JVM</b> loads, verifies and executes bytecode.</p><div class="note">Flow: <b>.java source → javac compiler → .class bytecode → JVM → execution</b>.</div></div><div class="topic"><h3>1.4 Class and Object</h3><p>A class is a blueprint containing fields and methods. An object is an instance created at runtime. Every object has identity, state and behavior.</p><div class="code">class Student {
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java Long Form Textbook Notes | StudyMate India</title><style>*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:#f5f7fb;color:#172033;line-height:1.8}.hero{background:linear-gradient(135deg,#111827,#312e81);color:#fff;padding:46px 0}.wrap{max-width:1100px;margin:auto;padding:0 22px}.hero h1{font-size:42px;margin:8px 0}.hero p{color:#dbeafe}.back{color:#c4b5fd;font-weight:800;text-decoration:none}.toc,.chapter{background:#fff;border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 8px 28px #0000000c}.toc{padding:18px;margin:22px 0}.toc a{display:inline-block;margin:5px 10px;color:#4338ca;font-weight:800;text-decoration:none}.chapter{padding:30px;margin:24px 0}.chapter h2{color:#312e81}.topic{border-top:1px solid #e5e7eb;padding:21px 0}.code{background:#0f172a;color:#e5e7eb;padding:18px;border-radius:12px;white-space:pre-wrap;overflow:auto;font:14px/1.7 Consolas,monospace}.ex{background:#f8fafc;padding:17px;border-radius:11px}.note{background:#eef2ff;border-left:5px solid #4f46e5;padding:16px;border-radius:10px}.warn{background:#fff7ed;border-left:5px solid #f97316;padding:16px;border-radius:10px}.qa{background:#fff7ed;padding:16px;border-radius:10px;margin:10px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.card{background:#f8fafc;padding:16px;border-radius:11px}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;padding:9px;text-align:left}@media(max-width:700px){.hero h1{font-size:31px}.grid{grid-template-columns:1fr}.chapter{padding:21px}}</style></head><body><header class="hero"><div class="wrap"><a class="back" href="notes.html">← Notes Library</a><h1>☕ Java Programming — Complete Long-Form Book</h1><p>College-level theory + line-by-line program explanation + OOP + exceptions + collections + I/O + multithreading + practical exam bank.</p></div></header><main class="wrap"><nav class="toc"><b>Chapters:</b><a href="#c1">Basics</a><a href="#c2">Control & Arrays</a><a href="#c3">Methods & Classes</a><a href="#c4">OOP</a><a href="#c5">Exceptions</a><a href="#c6">Collections</a><a href="#c7">I/O & Threads</a><a href="#lab">Programs</a></nav><section class="chapter" id="c1"><h2>Chapter 1 — Java Fundamentals</h2><div class="topic"><h3>1.1 What is Java?</h3><p>Java is a strongly typed, class-based programming language. A Java source file is compiled into bytecode. The Java Virtual Machine executes that bytecode, which is why the same compiled program can run on different operating systems that provide a compatible JVM.</p><div class="note"><b>Exam definition:</b> Java is a high-level, object-oriented, class-based language designed to support portable and robust application development.</div></div><div class="topic"><h3>1.2 JDK, JRE and JVM</h3><table><tr><th>Term</th><th>Meaning</th><th>Role</th></tr><tr><td>JDK</td><td>Java Development Kit</td><td>Tools to develop and compile programs</td></tr><tr><td>JRE</td><td>Java Runtime Environment</td><td>Runtime libraries + JVM for running applications</td></tr><tr><td>JVM</td><td>Java Virtual Machine</td><td>Loads, verifies and executes bytecode</td></tr></table><p><b>Flow:</b> Main.java → javac → Main.class → JVM → execution.</p></div><div class="topic"><h3>1.3 First Program — Line by Line</h3><div class="code">public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}</div><ol><li><code>public class Main</code> declares a class named Main.</li><li><code>main</code> is the conventional entry point for a Java application.</li><li><code>public</code> allows the runtime to access the method.</li><li><code>static</code> means the method belongs to the class, so an object is not required to invoke it.</li><li><code>void</code> means it returns no value.</li><li><code>System.out.println</code> prints text followed by a new line.</li></ol></div><div class="topic"><h3>1.4 Class and Object</h3><p>A class is a blueprint; an object is a runtime instance. Fields represent state and methods represent behavior.</p><div class="code">class Student {
     String name;
     int marks;
+
     void display() {
         System.out.println(name + " " + marks);
     }
 }
+
 class Main {
     public static void main(String[] args) {
         Student s = new Student();
@@ -12,62 +18,112 @@ class Main {
         s.marks = 85;
         s.display();
     }
-}</div></div><div class="topic"><h3>1.5 Data Types and Variables</h3><p>Primitive types are byte, short, int, long, float, double, char and boolean. Variables may be local, instance or static. Reference variables refer to objects rather than storing the object's complete state directly.</p></div></section><section class="chapter" id="2"><h2>Chapter 2 — Operators, Decisions, Loops and Arrays</h2><div class="topic"><h3>2.1 Operators</h3><p>Arithmetic operators perform calculations; relational operators compare values; logical operators combine conditions; assignment operators update variables; unary operators change one operand; the conditional operator provides a compact expression.</p></div><div class="topic"><h3>2.2 Decision Statements</h3><div class="code">int marks = 78;
-if (marks >= 90) System.out.println("A");
-else if (marks >= 60) System.out.println("B");
-else System.out.println("C");</div><p>Use switch when one expression is matched against multiple cases. Always use break or the intended fall-through behavior deliberately.</p></div><div class="topic"><h3>2.3 Loops</h3><p><b>for</b> is convenient when initialization, condition and update are known. <b>while</b> checks before each iteration. <b>do-while</b> runs the body at least once. <code>break</code> exits; <code>continue</code> skips the rest of the current iteration.</p></div><div class="topic"><h3>2.4 Arrays</h3><p>An array stores a fixed number of same-type elements. Indexing starts at zero.</p><div class="code">int[] a = {10,20,30,40,50};
+}</div><div class="ex"><b>Explanation:</b> <code>Student</code> defines the blueprint. <code>new Student()</code> creates an object. <code>s.name</code> and <code>s.marks</code> access instance fields. <code>s.display()</code> calls the object's method.</div></div><div class="topic"><h3>1.5 Data Types, Variables and Casting</h3><p>Primitive types are byte, short, int, long, float, double, char and boolean. A variable may be local, instance or static. Widening conversion is normally automatic; narrowing requires an explicit cast.</p><div class="code">int a = 10;
+double b = a;       // widening
+int c = (int)12.8;   // narrowing: c becomes 12</div></div></section><section class="chapter" id="c2"><h2>Chapter 2 — Operators, Decision Statements, Loops and Arrays</h2><div class="topic"><h3>2.1 Operators</h3><p>Arithmetic: + − * / %. Relational: &lt; &gt; &lt;= &gt;= == !=. Logical: &amp;&amp; || !. Assignment: = += -= *= /=. Unary: ++ --. Conditional: ?: . Bitwise operators work directly on integer bits.</p></div><div class="topic"><h3>2.2 if-else — Explained</h3><div class="code">int marks = 78;
+if (marks >= 90) {
+    System.out.println("A");
+} else if (marks >= 60) {
+    System.out.println("B");
+} else {
+    System.out.println("C");
+}</div><p>The conditions are checked from top to bottom. For 78, the first condition is false and the second is true, so the output is B.</p></div><div class="topic"><h3>2.3 Loops</h3><div class="code">for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}</div><p>Initialization runs once, the condition is checked before each iteration, the body executes, and the update runs after the body. Use <code>while</code> when the number of iterations depends mainly on a condition. Use <code>do-while</code> when the body must execute at least once.</p></div><div class="topic"><h3>2.4 Array Sum and Maximum</h3><div class="code">int[] a = {10, 20, 7, 40, 15};
 int sum = 0;
-for (int x : a) sum += x;
-System.out.println("Sum = " + sum);</div></div><div class="topic"><h3>2.5 Two-Dimensional Arrays</h3><div class="code">int[][] a={{1,2},{3,4}};
+int max = a[0];
+
+for (int x : a) {
+    sum += x;
+    if (x > max) max = x;
+}
+System.out.println("Sum = " + sum);
+System.out.println("Max = " + max);</div><p><b>Logic:</b> start sum at 0; start max with the first element; visit every element; add it to sum; replace max whenever a larger value is found. This is O(n) time.</p></div><div class="topic"><h3>2.5 Two-Dimensional Array and Matrix Addition</h3><div class="code">int[][] a={{1,2},{3,4}};
 int[][] b={{5,6},{7,8}};
 int[][] c=new int[2][2];
-for(int i=0;i<2;i++)
- for(int j=0;j<2;j++)
-  c[i][j]=a[i][j]+b[i][j];</div><p>Practice matrix addition, transpose and multiplication. For multiplication, the number of columns of the first matrix must equal the number of rows of the second.</p></div></section><section class="chapter" id="3"><h2>Chapter 3 — Methods, Constructors, Strings and Packages</h2><div class="topic"><h3>3.1 Methods</h3><p>A method has a name, parameter list and return type. Static methods belong to the class; instance methods operate on an object. Parameters receive values when the method is called.</p><div class="code">static int add(int a,int b){
-    return a+b;
-}</div></div><div class="topic"><h3>3.2 Method Overloading</h3><p>Overloading means multiple methods with the same name but different parameter lists. Return type alone cannot distinguish overloads. Overload resolution happens at compile time.</p></div><div class="topic"><h3>3.3 Constructors</h3><p>A constructor has the same name as its class and no return type. It initializes objects. Constructors may be no-argument or parameterized and can be overloaded.</p><div class="code">class Student {
- String name; int age;
- Student(){ this("Unknown",0); }
- Student(String name,int age){
-   this.name=name;
-   this.age=age;
- }
-}</div></div><div class="topic"><h3>3.4 this and super</h3><p><code>this</code> refers to the current object and can call another constructor using <code>this()</code>. <code>super</code> refers to the superclass and can call superclass constructors or access inherited members.</p></div><div class="topic"><h3>3.5 Strings</h3><p>String is immutable. Important methods include length, charAt, substring, equals, compareTo, contains and replace. For repeated modifications, StringBuilder is usually more suitable.</p></div><div class="topic"><h3>3.6 Packages and Access</h3><p>Packages organize related classes. Access modifiers control visibility: public is broadly accessible, private is class-only, protected supports package access plus subclass access, and default access is package-private.</p></div></section><section class="chapter" id="4"><h2>Chapter 4 — Inheritance, Polymorphism, Abstraction and Interfaces</h2><div class="topic"><h3>4.1 Inheritance</h3><p>Inheritance creates an is-a relationship. A subclass extends a superclass and can reuse or specialize inherited behavior. Java does not allow multiple inheritance of classes, but a class can implement multiple interfaces.</p><div class="code">class Animal { void sound(){System.out.println("Animal");} }
+
+for(int i=0;i<2;i++){
+    for(int j=0;j<2;j++){
+        c[i][j]=a[i][j]+b[i][j];
+    }
+}</div><p>Both matrices must have the same dimensions for addition. The outer loop selects the row and the inner loop selects the column.</p></div><div class="topic"><h3>2.6 Important Array Programs</h3><div class="grid"><div class="card">Reverse an array</div><div class="card">Linear and binary search</div><div class="card">Bubble/selection/insertion sort</div><div class="card">Frequency of elements</div><div class="card">Second largest element</div><div class="card">Matrix transpose/multiplication</div></div></div></section><section class="chapter" id="c3"><h2>Chapter 3 — Methods, Constructors, this, super and Strings</h2><div class="topic"><h3>3.1 Method Structure</h3><div class="code">static int add(int a, int b) {
+    return a + b;
+}</div><p><code>static</code> is the modifier, <code>int</code> is the return type, <code>add</code> is the method name, and <code>a,b</code> are parameters. The return statement sends the result back to the caller.</p></div><div class="topic"><h3>3.2 Method Overloading</h3><p>Same method name + different parameter list. Changing only return type is not enough. Example: <code>add(int,int)</code> and <code>add(double,double)</code>. The compiler selects the appropriate overload.</p></div><div class="topic"><h3>3.3 Constructors</h3><div class="code">class Student {
+    String name;
+    int age;
+
+    Student() {
+        this("Unknown", 0);
+    }
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}</div><p>The constructor runs when an object is created. <code>this.name=name</code> distinguishes the field from the parameter. <code>this(...)</code> calls another constructor in the same class.</p></div><div class="topic"><h3>3.4 this and super</h3><p><code>this</code> refers to the current object. <code>super</code> refers to the immediate superclass. <code>super()</code> can call a superclass constructor.</p></div><div class="topic"><h3>3.5 Strings</h3><p>String objects are immutable. Important methods include <code>length()</code>, <code>charAt()</code>, <code>substring()</code>, <code>equals()</code>, <code>compareTo()</code>, <code>contains()</code> and <code>replace()</code>. Use <code>StringBuilder</code> for many repeated changes.</p></div></section><section class="chapter" id="c4"><h2>Chapter 4 — Four Pillars of OOP</h2><div class="topic"><h3>4.1 Encapsulation</h3><p>Keep data and behavior together and restrict direct access. A common approach is private fields plus public methods.</p><div class="code">class Account {
+    private double balance;
+
+    public void deposit(double amount) {
+        if (amount > 0) balance += amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}</div></div><div class="topic"><h3>4.2 Inheritance and Overriding</h3><div class="code">class Animal {
+    void sound() { System.out.println("Animal"); }
+}
 class Dog extends Animal {
- @Override void sound(){System.out.println("Bark");}
-}</div></div><div class="topic"><h3>4.2 Overriding and Runtime Polymorphism</h3><div class="code">Animal a = new Dog();
-a.sound(); // Bark</div><p>The actual object determines which overridden instance method executes at runtime.</p></div><div class="topic"><h3>4.3 Encapsulation</h3><p>Encapsulation combines data and methods and controls access. A common pattern is private fields with public getters/setters and validation logic.</p></div><div class="topic"><h3>4.4 Abstraction</h3><p>Abstraction exposes essential behavior while hiding implementation details. Abstract classes can contain abstract and concrete methods. Interfaces define contracts that implementing classes fulfill.</p></div><div class="topic"><h3>4.5 Interface Example</h3><div class="code">interface Printable { void print(); }
+    @Override
+    void sound() { System.out.println("Bark"); }
+}</div><p><code>Dog extends Animal</code> creates inheritance. <code>@Override</code> documents that the subclass replaces an inherited method implementation.</p></div><div class="topic"><h3>4.3 Runtime Polymorphism</h3><div class="code">Animal a = new Dog();
+a.sound(); // Bark</div><p>The reference type is Animal but the actual object is Dog. The overridden instance method is selected at runtime.</p></div><div class="topic"><h3>4.4 Abstraction and Interfaces</h3><div class="code">interface Printable {
+    void print();
+}
 class Report implements Printable {
- public void print(){System.out.println("Report");}
-}</div></div></section><section class="chapter" id="5"><h2>Chapter 5 — Exception Handling and Collections</h2><div class="topic"><h3>5.1 Exceptions</h3><p>An exception represents an abnormal condition that interrupts normal execution. Use try-catch to handle exceptions, finally for cleanup logic, throw to explicitly raise an exception and throws to declare that a method may propagate an exception.</p><div class="code">try {
- int result = 10 / 0;
+    public void print() {
+        System.out.println("Report");
+    }
+}</div><p>An interface specifies a contract. A class implementing it provides the required behavior. Abstract classes can combine abstract and concrete methods.</p></div></section><section class="chapter" id="c5"><h2>Chapter 5 — Exception Handling</h2><div class="topic"><h3>5.1 try-catch-finally</h3><div class="code">try {
+    int result = 10 / 0;
+    System.out.println(result);
 } catch (ArithmeticException e) {
- System.out.println("Cannot divide by zero");
+    System.out.println("Cannot divide by zero");
 } finally {
- System.out.println("Done");
-}</div></div><div class="topic"><h3>5.2 Checked and Unchecked Exceptions</h3><p>Checked exceptions are checked by the compiler and generally must be handled or declared. Runtime exceptions are unchecked. Good exception handling should provide meaningful recovery rather than hiding programming errors.</p></div><div class="topic"><h3>5.3 Collections Framework</h3><p><b>List</b> stores an ordered sequence and permits duplicates. <b>Set</b> represents unique elements. <b>Map</b> stores key-value pairs. Common classes include ArrayList, LinkedList, HashSet, TreeSet and HashMap.</p><div class="code">import java.util.*;
-ArrayList<String> names=new ArrayList<>();
+    System.out.println("Done");
+}</div><ol><li>Risky code goes inside <code>try</code>.</li><li>If division by zero occurs, an ArithmeticException is thrown.</li><li>The matching <code>catch</code> handles it.</li><li><code>finally</code> runs for cleanup logic whether an exception occurs or not in normal control flow.</li></ol></div><div class="topic"><h3>5.2 throw and throws</h3><p><code>throw</code> explicitly throws an exception object. <code>throws</code> declares that a method may pass an exception to its caller. Checked exceptions generally require handling or declaration.</p></div><div class="topic"><h3>5.3 Custom Exception</h3><div class="code">class AgeException extends Exception {
+    AgeException(String msg) { super(msg); }
+}
+
+class Main {
+    static void checkAge(int age) throws AgeException {
+        if (age < 18) throw new AgeException("Not eligible");
+    }
+}</div></div></section><section class="chapter" id="c6"><h2>Chapter 6 — Collections Framework</h2><div class="topic"><h3>6.1 List, Set and Map</h3><table><tr><th>Type</th><th>Purpose</th><th>Examples</th></tr><tr><td>List</td><td>Ordered collection; duplicates allowed</td><td>ArrayList, LinkedList</td></tr><tr><td>Set</td><td>Unique elements</td><td>HashSet, TreeSet</td></tr><tr><td>Map</td><td>Key-value pairs</td><td>HashMap, TreeMap</td></tr></table></div><div class="topic"><h3>6.2 ArrayList and HashMap</h3><div class="code">import java.util.*;
+
+ArrayList<String> names = new ArrayList<>();
 names.add("Rahul");
 names.add("Aman");
-for(String n:names) System.out.println(n);
+for (String n : names) System.out.println(n);
 
-HashMap<Integer,String> m=new HashMap<>();
-m.put(10,"Rahul");
-System.out.println(m.get(10));</div></div></section><section class="chapter" id="6"><h2>Chapter 6 — Input/Output, Files and Multithreading</h2><div class="topic"><h3>6.1 Console Input</h3><div class="code">import java.util.Scanner;
+HashMap<Integer,String> students = new HashMap<>();
+students.put(10, "Rahul");
+System.out.println(students.get(10));</div><p><code>add</code> inserts into the list. <code>put</code> associates a key with a value. <code>get</code> retrieves a value using its key.</p></div></section><section class="chapter" id="c7"><h2>Chapter 7 — Input/Output, Files, Serialization and Threads</h2><div class="topic"><h3>7.1 Scanner Input</h3><div class="code">import java.util.Scanner;
 class Main {
- public static void main(String[] args){
-  Scanner sc=new Scanner(System.in);
-  int a=sc.nextInt();
-  int b=sc.nextInt();
-  System.out.println(a+b);
- }
-}</div><p>In an online compiler, values for Scanner are supplied through standard input/stdin.</p></div><div class="topic"><h3>6.2 File I/O</h3><p>Byte streams are suitable for binary data. Character streams are intended for text. Buffered streams can improve I/O efficiency.</p></div><div class="topic"><h3>6.3 Serialization</h3><p>Serialization converts an object into a byte representation that can be stored or transmitted. A serializable class commonly implements Serializable.</p></div><div class="topic"><h3>6.4 Multithreading</h3><p>A thread is a path of execution. Threads can be created using Thread or Runnable. Synchronization is used to protect shared mutable state from race conditions.</p><div class="code">class Task implements Runnable {
- public void run(){
-  System.out.println("Task running");
- }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println("Sum = " + (a+b));
+    }
+}</div><p>If input is <code>10 20</code>, Scanner reads 10 into a and 20 into b, then output is <code>Sum = 30</code>. Online compilers provide these values through standard input.</p></div><div class="topic"><h3>7.2 File Streams</h3><p>Byte streams handle binary data; character streams handle text. Buffered streams can improve efficiency. Modern Java code should use try-with-resources so files are closed automatically.</p></div><div class="topic"><h3>7.3 Multithreading</h3><div class="code">class Task implements Runnable {
+    public void run() {
+        System.out.println("Task running");
+    }
 }
 class Main {
- public static void main(String[] args){
-  new Thread(new Task()).start();
- }
-}</div></div></section><section class="chapter" id="lab"><h2>🧪 Practical & Exam Program Bank</h2><div class="qa">1. Hello World and user input using Scanner.</div><div class="qa">2. Even/odd, positive/negative and largest of three numbers.</div><div class="qa">3. Factorial, Fibonacci, prime number and palindrome.</div><div class="qa">4. Sum, maximum, minimum, reverse and sorting of an array.</div><div class="qa">5. Matrix addition, transpose and multiplication.</div><div class="qa">6. Class/object, constructor and method-overloading programs.</div><div class="qa">7. Inheritance, method overriding, abstract class and interface.</div><div class="qa">8. Exception handling using try-catch-finally and custom exception.</div><div class="qa">9. ArrayList, HashSet and HashMap programs.</div><div class="qa">10. File handling and multithreading basics.</div><div class="note"><b>Exam method:</b> First write the algorithm, then code, then sample input/output, then explain important lines. For viva, know why each keyword and loop is used.</div></section></main></body></html>
+    public static void main(String[] args) {
+        Thread t = new Thread(new Task());
+        t.start();
+    }
+}</div><p><code>Runnable</code> defines the work. <code>Thread</code> executes it. <code>start()</code> starts a new thread; calling <code>run()</code> directly does not create a new thread.</p></div></section><section class="chapter" id="lab"><h2>🧪 Long Practical Program Bank</h2><div class="qa"><b>1.</b> Input two integers and perform all arithmetic operations.</div><div class="qa"><b>2.</b> Check even/odd, positive/negative, largest of three and leap year.</div><div class="qa"><b>3.</b> Factorial, Fibonacci, prime, palindrome, Armstrong and reverse number.</div><div class="qa"><b>4.</b> Array sum, average, max/min, second largest, search and sorting.</div><div class="qa"><b>5.</b> Matrix addition, transpose and multiplication.</div><div class="qa"><b>6.</b> Class/object, constructor, method overloading and encapsulation.</div><div class="qa"><b>7.</b> Inheritance, overriding, abstract class and interface.</div><div class="qa"><b>8.</b> try-catch-finally, throw, throws and custom exception.</div><div class="qa"><b>9.</b> ArrayList, HashSet and HashMap.</div><div class="qa"><b>10.</b> File handling and multithreading.</div><div class="note"><b>Exam answer format:</b> Aim → theory/definition → algorithm → complete code → sample input → sample output → line-by-line explanation → result.</div></section></main></body></html>
