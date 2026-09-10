@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java Complete Notes & Programs | StudyMate India</title><style>body{font-family:system-ui;background:#f5f7fb;color:#172033;margin:0}.hero{background:#111827;color:#fff;padding:35px}.wrap{max-width:1050px;margin:auto;padding:25px}.module{background:#fff;margin:18px 0;padding:24px;border-radius:18px;box-shadow:0 8px 25px #00000010}.topic{border-top:1px solid #e5e7eb;padding:14px 0}.code{background:#0f172a;color:#e5e7eb;padding:16px;border-radius:10px;white-space:pre-wrap;overflow:auto}a{color:#4f46e5}</style></head><body><header class="hero"><div class="wrap"><h1>☕ Java Programming — Notes & Programs</h1><p>Module-wise theory, examples and lab-ready programs from the uploaded syllabus.</p></div></header><main class="wrap"><a href="notes.html">← Notes Hub</a><div class="module"><h2>Module 1 — OOP Introduction</h2><div class="topic">Object-oriented programming models software using objects and classes. Main benefits include reuse, modularity, abstraction, maintainability and extensibility.</div><div class="topic"><b>Java:</b> Java source is compiled to bytecode executed by the JVM. JDK provides development tools, JRE provides runtime components, and JVM executes bytecode.</div><div class="topic">Classes define state and behavior; objects are instances of classes. Access modifiers control visibility.</div><div class="code">class Student {
+    String name;
+    Student(String name) { this.name = name; }
+}
+Student s = new Student("Rahul");</div></div><div class="module"><h2>Module 2 — Data Types, Control Statements & Arrays</h2><div class="topic"><b>Primitive types:</b> byte, short, int, long, float, double, char, boolean. Reference types include classes, arrays and interfaces.</div><div class="topic"><b>Control statements:</b> if/else, switch, for, while, do-while, break, continue and return.</div><div class="topic"><b>Arrays:</b> Store multiple values of one type. Access with zero-based indexes. Multidimensional arrays are arrays of arrays.</div><div class="code">public class ArraySum {
+  public static void main(String[] args) {
+    int[] a = {10,20,30,40};
+    int sum = 0;
+    for(int x : a) sum += x;
+    System.out.println("Sum = " + sum);
+  }
+}</div></div><div class="module"><h2>Module 3 — Functions, Overloading & Constructors</h2><div class="topic">Methods contain reusable behavior. Method overloading means same method name with different parameter lists. Java passes arguments by value.</div><div class="topic">Constructors initialize objects and have the same name as the class. A constructor has no return type.</div><div class="topic">Encapsulation combines data and methods; inheritance enables reuse; polymorphism allows one interface with different implementations.</div><div class="code">class Calculator {
+  int add(int a,int b){ return a+b; }
+  double add(double a,double b){ return a+b; }
+}</div></div><div class="module"><h2>Module 4 — Inheritance & Collections</h2><div class="topic">Inheritance lets a subclass acquire accessible members of a superclass. Java supports single, multilevel and hierarchical class inheritance; multiple inheritance of classes is not supported.</div><div class="topic">Keywords: extends, super, final. Method overriding enables runtime polymorphism. Abstract classes define incomplete abstractions. Interfaces define contracts and support multiple type inheritance.</div><div class="topic">Common collections: ArrayList, LinkedList, HashSet, TreeSet, HashMap and TreeMap.</div></div><div class="module"><h2>Module 5 — Basic Applets & I/O</h2><div class="topic">The syllabus includes applet concepts, HTML applet tags, applet life cycle, parameters, graphics and applet input/output. Modern Java no longer uses applets in current mainstream JDKs, so these are primarily legacy academic concepts.</div><div class="topic">I/O streams include byte streams and character streams. Buffered streams improve efficient reading/writing. Serialization converts object state to a byte stream.</div><div class="code">import java.io.*;
+public class FileDemo {
+  public static void main(String[] args) throws Exception {
+    try(BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
+      String line;
+      while((line = br.readLine()) != null) System.out.println(line);
+    }
+  }
+}</div></div><div class="module"><h2>🔥 Important Lab Programs</h2><div class="code">// Factorial
+int n = 5, fact = 1;
+for(int i=1;i<=n;i++) fact *= i;
+System.out.println(fact);
+
+// Palindrome
+int n = 121, temp=n, rev=0;
+while(n>0){ rev=rev*10+n%10; n/=10; }
+System.out.println(temp==rev ? "Palindrome" : "Not Palindrome");
+
+// Exception Handling
+try { int x=10/0; }
+catch(ArithmeticException e){ System.out.println("Cannot divide by zero"); }
+
+// Matrix Addition
+for(int i=0;i<r;i++)
+  for(int j=0;j<c;j++)
+    C[i][j]=A[i][j]+B[i][j];</div></div></main></body></html>
